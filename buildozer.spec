@@ -12,14 +12,15 @@ package.domain = org.tuda
 # (str) Source files where the app lives
 source.dir = .
 
-# (list) Source files to include
+# (list) Source files to include (let empty to include all the files)
 source.exts = py,png,jpg,kv,atlas
 
 # (str) Application versioning
 version = 1.0
 
 # (list) Application requirements
-requirements = python3,kivy,certifi,six
+# حيدنا android ودرنا kivy==master باش نتفاداو المشكل ديال Version not found
+requirements = python3,kivy==master,certifi,six
 
 # (str) Supported orientations
 orientation = portrait
@@ -30,17 +31,23 @@ fullscreen = 0
 # (list) Permissions
 android.permissions = INTERNET
 
-# (bool) Automatically accept SDK license
+# (list) The Android archs to build for
+# زدنا هادي باش يبني غير للهواتف الجداد ويزرب فالبناء
+android.archs = arm64-v8a
+
+# (bool) automatically accept SDK license
 android.accept_sdk_license = True
 
-# (int) Target Android API
+# (int) Target Android API, should be as high as possible.
 android.api = 33
 
-# (int) Minimum API your APK will support
+# (int) Minimum API your APK will support.
 android.min_api = 21
 
 # (str) Android SDK version to use
-android.sdk = 33
+# حيدناها باش ما تعطيش Warning بالأحمر
+# android.sdk = 33
 
 # (str) Android NDK version to use
-android.ndk = 25b
+# حيدناها باش Buildozer ياخد النسخة المتوافقة لراسو
+# android.ndk = 25b
