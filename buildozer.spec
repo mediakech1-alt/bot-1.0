@@ -5,7 +5,10 @@ package.domain = org.tuda
 source.dir = .
 source.exts = py,png,jpg,kv,atlas
 version = 1.0
-requirements = python3,kivy,matplotlib,numpy,twisted,OpenSSL,certifi,protobuf,six
+
+# تم حذف المكتبات المعقدة وتخليص Requirements لتفادي خطأ Autoreconf
+requirements = python3,kivy,certifi,six
+
 orientation = portrait
 fullscreen = 0
 android.permissions = INTERNET
