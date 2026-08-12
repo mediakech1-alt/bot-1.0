@@ -6,19 +6,35 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # هاد الأكشن كيتكلف بكلشي: كيجيب البيئة المثالية، كيسطالي NDK و SDK، وكيبني الـ APK
-      - name: Build with Buildozer
-        uses: ArtemSBulgakov/buildozer-action@v1
-        id: buildozer
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          command: buildozer android debug
-          buildozer_version: stable
+          python-version: '3.10'
+
+      - name: Install System Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            git zip unzip openjdk-17-jdk python3-pip \
+            autoconf libtool pkg-config zlib1g-dev \
+            libncurses5-dev libncursesw5-dev libtinfo5 cmake \
+            libffi-dev libssl-dev build-essential libltdl-dev
+          
+      - name: Install Buildozer and Cython
+        run: |
+          python -m pip install --upgrade pip virtualenv
+          # هادا هو الحل: حيدنا التحديد ديال Cython باش ياخد أحدث نسخة متوافقة
+          pip install buildozer Cython
+
+      - name: Build with Buildozer
+        run: |
+          buildozer -v android debug
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
