@@ -19,8 +19,8 @@ source.exts = py,png,jpg,kv,atlas
 version = 1.0
 
 # (list) Application requirements
-# حيدنا android ودرنا kivy==master باش نتفاداو المشكل ديال Version not found
-requirements = python3,kivy==master,certifi,six
+# رديناها kivy بوحدها باش تخدم مزيان مع Cython الجديد بلا أخطاء ديال C++
+requirements = python3,kivy,certifi,six
 
 # (str) Supported orientations
 orientation = portrait
@@ -32,7 +32,6 @@ fullscreen = 0
 android.permissions = INTERNET
 
 # (list) The Android archs to build for
-# زدنا هادي باش يبني غير للهواتف الجداد ويزرب فالبناء
 android.archs = arm64-v8a
 
 # (bool) automatically accept SDK license
@@ -45,9 +44,7 @@ android.api = 33
 android.min_api = 21
 
 # (str) Android SDK version to use
-# حيدناها باش ما تعطيش Warning بالأحمر
 # android.sdk = 33
 
 # (str) Android NDK version to use
-# حيدناها باش Buildozer ياخد النسخة المتوافقة لراسو
 # android.ndk = 25b
