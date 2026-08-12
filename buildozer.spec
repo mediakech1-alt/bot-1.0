@@ -1,19 +1,46 @@
 [app]
+
+# (str) Title of your application
 title = TUDA AI cTrader
+
+# (str) Package name
 package.name = tudaai
+
+# (str) Package domain (needed for android packaging)
 package.domain = org.tuda
+
+# (str) Source files where the app lives
 source.dir = .
+
+# (list) Source files to include
 source.exts = py,png,jpg,kv,atlas
+
+# (str) Application versioning
 version = 1.0
 
-# تم حذف المكتبات المعقدة وتخليص Requirements لتفادي خطأ Autoreconf
+# (list) Application requirements
 requirements = python3,kivy,certifi,six
 
+# (str) Supported orientations
 orientation = portrait
+
+# (bool) Indicate if the application should be fullscreen or not
 fullscreen = 0
+
+# (list) Permissions
 android.permissions = INTERNET
+
+# (bool) Automatically accept SDK license
 android.accept_sdk_license = True
+
+# (int) Target Android API
 android.api = 33
+
+# (int) Minimum API your APK will support
 android.min_api = 21
+
+# (str) Android SDK version to use
 android.sdk = 33
+
+# (str) Android NDK version to use
 android.ndk = 25b
