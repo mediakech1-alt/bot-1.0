@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04 # رجعناها 22.04 حيت 20.04 ما بقاتش كاينة فجيتهاب
+    runs-on: ubuntu-22.04
 
     steps:
     - name: Checkout Code
