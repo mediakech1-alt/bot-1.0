@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04 # هادي ضرورية بزاف باش نتفاداو مشاكل ubuntu24
+    runs-on: ubuntu-22.04 # رجعناها 22.04 حيت 20.04 ما بقاتش كاينة فجيتهاب
 
     steps:
     - name: Checkout Code
